@@ -44,4 +44,6 @@ function BottomTabNavigator() {
             
       </BottomTab.Navigator>
     )
+
 }
+

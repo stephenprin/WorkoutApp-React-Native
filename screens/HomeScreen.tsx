@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     container: {
         padding: 20,
         flex: 1,
+        fontFamily:'poppins'
            
     },
     header:{
@@ -41,6 +42,7 @@ const styles = StyleSheet.create({
     color: '#06383ccc',
     marginBottom: 10,
     textTransform: 'uppercase',
+    fontFamily:'poppins-bold'
     
      
     }
