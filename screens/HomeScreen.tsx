@@ -1,32 +1,30 @@
 import { View, Text, Button, StyleSheet, ImageBackground, FlatList } from 'react-native'
 import { NativeStackHeaderProps } from '@react-navigation/native-stack' 
-import { useEffect } from 'react'
+
 import data from '../data.json'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { workTypes } from '../types/workTypes'
+import { renderItem } from '../components/workappItem'
 
 
 type navigationType = NativeStackHeaderProps
 
 export default function HomeScreen({ navigation }: navigationType) {
 
-    const renderItem = ({ item }: any) =>
-        <View>
-              <Text style={styles.title}>{item.name}</Text>
-             <Text style={styles.diff}>{item.difficulty}</Text>
-      </View>
+   
     
     
 
     return (
-        <SafeAreaView style={styles.container}>
-        
+        <View style={styles.container}>
+            <Text style={styles.header}>new workout</Text>
             <FlatList
-                data={data}
+                data={data as workTypes[]}
                 renderItem={ renderItem}
                 keyExtractor={(item) => item.slug}
             
             />
-        </SafeAreaView>
+        </View>
     )
 }
 
@@ -34,16 +32,18 @@ export default function HomeScreen({ navigation }: navigationType) {
 const styles = StyleSheet.create({
     container: {
         padding: 20,
-       
-        
+        flex: 1,
+           
     },
-    title:{
-    fontSize: 16,
-        fontWeight: 'bold',
-        color: 'maroon',
-    },
-    diff: {
-        fontSize: 14,
-        color: 'black',
+    header:{
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#06383ccc',
+    marginBottom: 10,
+    textTransform: 'uppercase',
+    
+     
     }
+
 })
+

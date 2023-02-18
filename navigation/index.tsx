@@ -33,6 +33,7 @@ function RootNavigator() {
 
 
 
+
 const BottomTab = createBottomTabNavigator();
 
 function BottomTabNavigator() { 
