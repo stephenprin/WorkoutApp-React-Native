@@ -6,11 +6,7 @@ type navigationType = NativeStackHeaderProps
 
 export default function PlannerScreen({ navigation }: navigationType) { 
     
-    useEffect(() => { 
-        console.log("PlannerScreen mounted")
-
-        return () => console.log('Unmounted planner' )
-    }, [])
+   
     return (
         <View>
             <Text>Planner Screen</Text>
