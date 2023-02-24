@@ -21,7 +21,7 @@ export default function HomeScreen({ navigation }: navigationType) {
                 renderItem={({ item }) => {
                     return (
                         <Pressable
-                            onPress={() => navigation.navigate('workoutdetails', { item })}
+                            onPress={() => navigation.navigate('workoutdetails', { slug:item.slug })}
                         >
                             <RenderItem item={item} />
                         </Pressable>
