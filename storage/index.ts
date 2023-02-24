@@ -8,6 +8,8 @@ export const storeData = async (key:string, value: any) => {
         console.error(e.message)
     }
 }
+
+
 export const getData = async (key:string) => { 
     try {
         const value = await AsyncStorage.getItem(key)
@@ -15,6 +17,23 @@ export const getData = async (key:string) => {
             return JSON.parse(value)
         }
     } catch(e:any) {
+        console.error(e.message)
+    }
+}
+
+export const containKey = async (key: string) => { 
+    try {
+        const keys = await AsyncStorage.getAllKeys()
+        return keys.includes(key)
+    }catch(e:any) {
+        console.error(e.message)
+    }
+}
+
+export const removeData = async (key: string) => { 
+    try {
+        await AsyncStorage.removeItem(key)
+    }catch(e:any) {
         console.error(e.message)
     }
 }

@@ -6,6 +6,8 @@ import Navigation from './navigation';
 export default function App() {
    
   const isLoading = useCachedResources();
+  
+
   if (isLoading) {
     return (
       <>

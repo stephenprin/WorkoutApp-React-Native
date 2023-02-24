@@ -38,6 +38,7 @@ function RootNavigator() {
 
 const BottomTab = createBottomTabNavigator();
 
+
 function BottomTabNavigator() { 
     return (
         <BottomTab.Navigator initialRouteName="Home">

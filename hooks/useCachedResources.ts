@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import * as Font from 'expo-font';
-import { getData, storeData } from '../storage/storage';
-import data from '../data.json';
+
+import { initWorkout } from '../storage/workout';
 
 
 export default function useCachedResources() { 
@@ -10,7 +10,9 @@ export default function useCachedResources() {
     useEffect(() => { }, []);
     async function dataHandleResources() {
         try {
-            await  storeData('workout-data', data)
+      
+            await initWorkout()
+            
             await Font.loadAsync({
                 'poppins': require('../assets/fonts/Poppins-Regular.ttf'),
                 'poppins-bold': require('../assets/fonts/Poppins-Bold.ttf'),
@@ -19,8 +21,8 @@ export default function useCachedResources() {
         } catch (error) {
             console.warn(error);
         } finally { 
-            const workout = await getData('workout-data')
-            console.log(workout)
+           
+            
             setLoadingComplete(true);
         }
     }
